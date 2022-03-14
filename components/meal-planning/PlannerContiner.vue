@@ -6,7 +6,7 @@
       :plan="plan"
       @togglePopup="togglePopup"
     />
-    <plan-list-popup v-if="popup" @togglePopup="togglePopup"/>
+    <plan-list-popup v-if="popup" @togglePopup="togglePopup" />
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
           id: 1,
           title: "1st Feeding",
           fixed: {
+            id: 1,
             img: [],
             title: "1st Breast Milk or Formula Feeding",
             cups: "6 ounces",
@@ -36,12 +37,14 @@ export default {
           fixed: false,
           dynamic: [
             {
+              id: 1,
               img: "",
               name: "",
               title: "Fruit or Vegetable",
               cups: "¼ cup, cut up",
             },
             {
+              id: 2,
               img: "",
               name: "",
               title: "Fruit or Vegetable",
