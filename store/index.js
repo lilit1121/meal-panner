@@ -1,9 +1,19 @@
-export const state = () => ({
-  currentproduct: {}
-});
-
-export const mutations = {
-  setCurrentProduct(state, data) {
-      state.currentproduct = data
-  }
+export default {
+  state: () => {
+    return {
+      currentProduct: {},
+    };
+  },
+  mutations: {
+    setCurrentProduct(state, data) {
+      state.currentProduct = data;
+    },
+    setData(state, data) {
+      state.currentProduct.name = data.name;
+      state.currentProduct.img = data.image;
+      console.log(state);
+    },
+  },
+  actions: {},
+  getters: {},
 };

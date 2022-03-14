@@ -1,7 +1,7 @@
 <template>
   <div class="popup">
-    <div class="carousel-continer">
-      <h2>Fruite Purees</h2>
+    <div class="carousel-container">
+      <h2>Fruit Purees</h2>
       <div class="close" @click="$emit('togglePopup', false)">
         <svg
           width="18"
@@ -28,7 +28,12 @@
       </div>
       <client-only>
         <slick v-bind="settings">
-          <div class="product" v-for="product in products" :key="product.id">
+          <div
+            class="product"
+            v-for="product in products"
+            :key="product.id"
+            @click="setData(product)"
+          >
             <img :src="product.image" alt="Product" />
             <p>{{ product.name }}</p>
           </div>
@@ -43,7 +48,7 @@ export default {
   data() {
     return {
       settings: {
-        arows: false,
+        arrows: false,
         slidesToShow: 5,
         centerMode: true,
       },
@@ -76,20 +81,26 @@ export default {
       ],
     };
   },
+  methods: {
+    setData(data) {
+      this.$store.commit("setData", data);
+      this.$emit("togglePopup", false);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/css/variables.scss";
 .popup {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100%;
   background: rgba($color: #000000, $alpha: 0.1);
 }
-.carousel-continer {
+.carousel-container {
   background: $pinkish-grey;
   width: 80%;
   margin: 200px auto;
