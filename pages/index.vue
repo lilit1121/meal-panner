@@ -1,11 +1,11 @@
 <template>
-  <PlannerContiner />
+  <PlannerContainer />
 </template>
 
 <script>
-import PlannerContiner from "~/components/meal-planning/PlannerContiner.vue";
+import PlannerContainer from "~/components/meal-planning/PlannerContainer.vue";
 export default {
-  components: { PlannerContiner },
+  components: { PlannerContainer },
   name: "IndexPage",
 };
 </script>
