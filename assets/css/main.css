@@ -2,9 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body {
-  width: 90.25em;
+  max-width: 90.25em;
+  width: 100vw;
+  min-width: 40em;
   margin: 0;
-  padding: 0;
+  padding: 2em;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }

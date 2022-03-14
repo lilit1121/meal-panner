@@ -16,9 +16,9 @@ export default {
 @import "@/assets/css/variables.scss";
 
 .wrapper {
-  width: 86em;
+  width: 100%;
   height: 124em;
-  margin: 2em;
+  margin: 0;
   padding: 0;
   background-color: $light-gray;
 }

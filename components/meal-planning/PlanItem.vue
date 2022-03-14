@@ -72,21 +72,53 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variables.scss";
 
+@media (max-width: 900px) {
+  .plan_item {
+    flex-direction: column;
+    .plan_item-title {
+      width: 100%;
+      border-radius: 0.6em 0.6em 0 0;
+    }
+    .plan_item-body {
+      width: 100%;
+      border-radius: 0 0 0.6em 0.6em;
+    }
+  }
+  .choose,
+  .change {
+    margin-right: 0 !important;
+  }
+}
+
 .plan_item {
   min-height: 10.625em;
   display: flex;
+  &:hover,
+  &:active {
+    .plan_item-body {
+      border-color: $button-blue;
+    }
+    .plan_item-title {
+      background-color: $button-blue;
+      border-color: $button-blue;
+    }
+    .dynamic-item + .dynamic-item {
+      border-color: $button-blue;
+    }
+  }
   &-title {
     justify-content: center;
 
-    width: 12em;
+    width: 14%;
     background: $pinkish-grey;
     color: $white;
-    border-radius: 0.375em 0 0 0.375em;
+    border-radius: 0.6em 0 0 0.6em;
+    border: solid 2px $pinkish-grey;
   }
   &-body {
     border-radius: 0 0.6em 0.6em 0;
     border: solid 2px $pinkish-grey;
-    width: 100%;
+    width: 86%;
     overflow: hidden;
 
     .fixed-item,
