@@ -273,7 +273,8 @@ export default {
     width: 80vw;
   }
   .plan_item {
-    margin: 0 auto;
+    margin-left: 1em !important;
+    // margin: 0 auto;
     width: 80vw;
     &-body {
       .fixed-item {
