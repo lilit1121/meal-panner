@@ -1,5 +1,7 @@
-.slick-slide + .slick-slide {
-  margin-left: 2em;
+.slick-slide {
+  width: 15em !important;
+  height: 20em !important;
+  margin-left: 1.9em !important;
 }
 
 .slick-track {
@@ -7,4 +9,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+}
+.slick-track:first-child {
+  margin-left: 2em !important;
 }

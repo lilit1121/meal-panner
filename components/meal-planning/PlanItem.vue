@@ -6,8 +6,8 @@
     <div class="plan_item-body">
       <div v-if="plan.fixed" class="fixed-item">
         <div class="fixed-item-img flex">
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <img src="~/assets/images/breast-feeding-1.png" alt="" />
+          <img src="~/assets/images/breast-feeding-2.png" alt="" />
         </div>
         <div class="fixed-item-desc">
           <h4>{{ plan.fixed.title }}</h4>
@@ -22,7 +22,11 @@
         >
           <div class="dynamic_content">
             <div class="dynamic-item-img">
-              <img v-if="item.img" :src="item.img" alt="" />
+              <img
+                v-if="item.img"
+                :src="require(`~/assets/${item.img}`)"
+                alt=""
+              />
               <div v-else class="add-btn">
                 <div class="btn"><p>+</p></div>
               </div>
@@ -72,7 +76,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variables.scss";
 
-@media (max-width: 900px) {
+@media screen and (max-width: 982px) {
   .plan_item {
     flex-direction: column;
     .plan_item-title {
@@ -86,7 +90,29 @@ export default {
   }
   .choose,
   .change {
-    margin-right: 0 !important;
+    margin-right: 1em !important;
+  }
+  .fixed-item-desc {
+    h4 {
+      font-size: 16px !important;
+      line-height: 0.2;
+    }
+    p {
+      font-size: 15px;
+      line-height: 0.5;
+    }
+  }
+}
+@media screen and (max-width: 792px) {
+  .fixed-item-desc {
+    h4 {
+      font-size: 13px !important;
+      line-height: 0.15;
+    }
+    p {
+      font-size: 13px;
+      line-height: 0.4;
+    }
   }
 }
 
@@ -108,6 +134,9 @@ export default {
   }
   &-title {
     justify-content: center;
+    h3 {
+      text-align: center;
+    }
 
     width: 14%;
     background: $pinkish-grey;
@@ -127,12 +156,12 @@ export default {
       justify-content: space-between;
       align-items: center;
       height: 10.625em;
-      padding: 0 1.625em;
+      padding: 0;
       background: #fff;
       overflow: hidden;
       button {
-        margin-right: 3.5em;
-        width: 9em;
+        margin-right: 3.2em;
+        width: 10em;
         height: 2.2em;
         border-radius: 1.1em;
         border: none;
@@ -148,9 +177,19 @@ export default {
         color: $white;
       }
       .fixed-item-desc {
-        &-h4 {
-          font-size: 24px;
-          line-height: 12px;
+        // width: 30em;
+        color: #333;
+
+        h4 {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 0.25;
+          // letter-spacing: normal;
+          font-family: inherit;
+        }
+        p {
+          font-weight: normal;
+          line-height: 0.625;
         }
       }
     }
@@ -159,18 +198,29 @@ export default {
     }
     .change {
       background-color: $button-gray;
+      cursor: pointer;
     }
     .choose {
       background-color: $button-blue;
+      cursor: pointer;
     }
     img,
     .add-btn {
       width: 7.5em;
-      height: 7.5em;
+      height: 7.4em;
       margin-right: 1.6em;
+      margin-left: 1.68em;
+    }
+    img + img {
+      margin-left: 0;
+      margin-right: 3.1em;
     }
     .dynamic-item + .dynamic-item {
       border-top: 2px solid $pinkish-grey;
+    }
+    .dynamic-item-action:hover {
+      transform: translateX(-2.5em);
+      transition: all 0.5s ease-in-out;
     }
     .dynamic-item {
       .dynamic_content {
@@ -203,6 +253,10 @@ export default {
           }
         }
       }
+      .choose,
+      .change {
+        margin-right: 3.25em;
+      }
     }
   }
 }
@@ -212,5 +266,40 @@ export default {
 }
 .activeBackground {
   background-color: $button-blue;
+}
+@media screen and (max-width: 736px) {
+ 
+  .wrapper {
+    width: 80vw;
+  }
+  .plan_item {
+    margin: 0 auto;
+    width: 80vw;
+    &-body {
+      .fixed-item {
+        justify-content: center;
+        flex-direction: column;
+      }
+      img,
+      .add-btn {
+        width: 5em;
+        height: 5em;
+      }
+      .dynamic-item-action {
+        align-self: flex-end;
+        margin-bottom: 2em;
+      }
+      .dynamic-item-action:hover {
+        transform: translateY(-0.8em);
+        transition: all 0.4s ease-in-out;
+      }
+      .choose,
+      .change {
+        width: 6em !important;
+        align-self: flex-end;
+
+      }
+    }
+  }
 }
 </style>

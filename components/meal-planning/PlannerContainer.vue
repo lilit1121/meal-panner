@@ -95,8 +95,8 @@ export default {
               id: 2,
               img: "",
               name: "",
-              title: "Cup of Water",
-              cups: "2 ounces",
+              title: "Fruit or Vegetable",
+              cups: "¼ cup, cut up",
             },
           ],
         },
@@ -146,7 +146,7 @@ export default {
 
 <style lang="scss" scoped>
 .plan_item {
-  margin: 0 3rem 2em 3em;
+  margin: 0 3rem 1.875em 3em;
 }
 .planner-container {
   padding-top: 2em;

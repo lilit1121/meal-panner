@@ -11,7 +11,6 @@ export default {
     setData(state, data) {
       state.currentProduct.name = data.name;
       state.currentProduct.img = data.image;
-      console.log(state);
     },
   },
   actions: {},
